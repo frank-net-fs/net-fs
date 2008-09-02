@@ -53,11 +53,14 @@ public class DualSimplex extends PrimalSimplex {
 		
 		double quotient;
 		
-		// Select row
+		// Select pivot row
 		int pr = -1;
 		double min = Double.POSITIVE_INFINITY;
 		for(int i=0;i<m.length-1;++i) {
-			if(m[i][m[i].length-1] < 0 && m[i][m[i].length-1] < min) {
+			if(
+					m[i][m[i].length-1] < 0 &&
+					m[i][m[i].length-1] < min) {
+				
 				pr = i;
 				min = m[i][m[i].length-1];
 			}
@@ -71,18 +74,19 @@ public class DualSimplex extends PrimalSimplex {
 					return CONTINUE;
 				}
 			}
-			// Solved;
 			return OPTIMAL;
 		}
 		
-		// Select column
+		// Select pivot column
 		int pc = -1;
 		double max = Double.NEGATIVE_INFINITY;
 		if(pr > -1) {
 			for(int i=0;i<m[pr].length-1;++i) {
-				if(m[pr][i] < 0 && (i < objective.length || !locked[i-objective.length])) {
+				if(
+						m[pr][i] < 0 &&
+						(i < objective.length || !locked[i-objective.length])) {
+					
 					quotient = m[m.length-1][i] / m[pr][i];
-					//System.out.println("("+ m[i][m[i].length-1] +" / "+ m[i][pc] +") <"+ min);
 					if(quotient > max) {
 						min = quotient;
 						pc = i;
@@ -90,13 +94,11 @@ public class DualSimplex extends PrimalSimplex {
 				}
 			}
 			if(pc < 0) {
-				// UNBOUNDED
 				return UNBOUNDED;
 			}
-			
 		}
 		
-		// pivot
+		// Pivot
 		System.out.println("Pivo: row="+ (pr+1) +", column="+ (pc+1));
 		pivot(pr, pc);
 		
