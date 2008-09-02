@@ -72,10 +72,6 @@ public class TwoPhaseSimplex extends DualSimplex {
 						pc = i;
 						System.out.println("Lock column: "+ (pr+1));
 						locked[pr] = true;
-						//if(i<basisVariable.length) {
-						//	System.out.println("Lock column: "+ (pr+1));
-						//	locked[pr] = true;
-						//}
 						break;
 					}
 				}
@@ -103,9 +99,6 @@ public class TwoPhaseSimplex extends DualSimplex {
 			pc = -1;
 			if(pr > 0) {
 				for(int i=0;i<m[pr].length-1;++i) {
-					//if(pr==5 && i == 5) {
-					//	System.out.println(m[pr][i] +" < "+ 0 +" && "+ (i < target.length || !locked[i-target.length]));
-					//}
 					if(m[pr][i] < 0 && (i < objective.length || !locked[i-objective.length])) {
 						pc = i;
 						break;
