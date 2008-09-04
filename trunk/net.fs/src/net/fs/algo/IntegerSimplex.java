@@ -70,7 +70,6 @@ public class IntegerSimplex extends TwoPhaseSimplex {
 			return UNBOUNDED;
 		}
 		
-		
 		System.out.println("Eliminate real values");
 		int ix = -1;
 		double[] coeffizients = super.getCoefficients();
