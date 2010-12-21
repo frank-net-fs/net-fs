@@ -25,9 +25,12 @@ gadgets.util.registerOnLoadHandler(function() {
 	if(delay > 0) {
 		var src = prefs.getString("mysrc");
 		window.setTimeout(function() {
+			console.info("src:", src);
+			/*
 			var frame = document.getElementById("myframe");
 			frame.src = src;
 			gadgets.window.adjustHeight();
+			*/
 		}, delay);
 	} else {
 		frame.src = prefs.getString("mysrc");
