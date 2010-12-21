@@ -19,6 +19,7 @@ gadgets.util.registerOnLoadHandler(function() {
 	var prefs = new gadgets.Prefs();
 
 	var frame = document.getElementById("myframe");
+	console.info("frame: ", frame);
 	frame.style.width = prefs.getString("mywidth");
 	frame.style.height = prefs.getString("myheight");
 	var delay = prefs.getString("mydelay");
