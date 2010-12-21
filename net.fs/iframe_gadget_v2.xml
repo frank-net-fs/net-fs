@@ -23,8 +23,9 @@ gadgets.util.registerOnLoadHandler(function() {
 	frame.style.height = prefs.getString("myheight");
 	var delay = prefs.getString("mydelay");
 	if(delay > 0) {
+		var src = prefs.getString("mysrc");
 		window.setTimeout(function() {
-			frame.src = prefs.getString("mysrc");
+			frame.src = src;
 			gadgets.window.adjustHeight();
 		}, delay);
 	} else {
