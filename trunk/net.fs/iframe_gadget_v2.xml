@@ -18,7 +18,7 @@ gadgets.util.registerOnLoadHandler(function() {
 	// Get userprefs
 	var prefs = new gadgets.Prefs();
 
-	var frame = 
+	var frame = document.getElementById("myframe");
 	frame.style.width = prefs.getString("mywidth");
 	frame.style.height = prefs.getString("myheight");
 	var delay = prefs.getString("mydelay");
