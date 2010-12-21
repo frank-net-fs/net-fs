@@ -21,12 +21,12 @@ gadgets.util.registerOnLoadHandler(function() {
 	var frame = document.getElementById("myframe");
 	frame.style.width = prefs.getString("mywidth");
 	frame.style.height = prefs.getString("myheight");
-	var delay = prefs.getInt("mydelay");
+	var delay = prefs.getString("mydelay");
 	if(delay > 0) {
-		window.setTimeout(delay, function() {
+		window.setTimeout(function() {
 			frame.src = prefs.getString("mysrc");
 			gadgets.window.adjustHeight();
-		});
+		}, delay);
 	} else {
 		frame.src = prefs.getString("mysrc");
 		gadgets.window.adjustHeight();
