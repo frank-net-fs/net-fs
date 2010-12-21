@@ -14,24 +14,7 @@
 <iframe id="myframe" frameborder="0"></iframe>
 <script type="text/javascript">
 
-gadgets.util.registerOnLoadHandler(function() {
-	// Get userprefs
-	var prefs = new gadgets.Prefs();
 
-	var frame = document.getElementById("myframe");
-	frame.style.width = prefs.getString("mywidth");
-	frame.style.height = prefs.getString("myheight");
-	var delay = prefs.getInt("mydelay");
-	if(delay > 0) {
-		window.setTimeout(delay, function() {
-			frame.src = prefs.getString("mysrc");
-			gadgets.window.adjustHeight();
-		});
-	} else {
-		frame.src = prefs.getString("mysrc");
-		gadgets.window.adjustHeight();
-	}
-});
 
 
 
