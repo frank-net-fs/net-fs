@@ -24,7 +24,7 @@ gadgets.util.registerOnLoadHandler(function() {
 	var delay = prefs.getString("mydelay");
 	if(delay > 0) {
 		var src = prefs.getString("mysrc");
-		window.setTimeout(function() {
+		setTimeout(function() {
 			console.info("src:", src);
 			/*
 			var frame = document.getElementById("myframe");
