@@ -18,13 +18,14 @@ gadgets.util.registerOnLoadHandler(function() {
 	// Get userprefs
 	var prefs = new gadgets.Prefs();
 
-	var frame = document.getElementById("myframe");
+	var frame = 
 	frame.style.width = prefs.getString("mywidth");
 	frame.style.height = prefs.getString("myheight");
 	var delay = prefs.getString("mydelay");
 	if(delay > 0) {
 		var src = prefs.getString("mysrc");
 		window.setTimeout(function() {
+			var frame = document.getElementById("myframe");
 			frame.src = src;
 			gadgets.window.adjustHeight();
 		}, delay);
