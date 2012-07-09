@@ -88,7 +88,14 @@ public class DualSimplex extends PrimalSimplex {
 					
 					quotient = m[m.length-1][i] / m[pr][i];
 					if(quotient > max) {
-						min = quotient;
+            /*
+						 * 2012-07-09
+						 *  Greathfully thanks to Andy Jose <andyymm21@gmail.com>
+						 *  for finding a bug. It have to be "max" instead of "min"
+						 *  
+						 *  min = quotient;
+						 */
+						max = quotient;
 						pc = i;
 					}
 				}
