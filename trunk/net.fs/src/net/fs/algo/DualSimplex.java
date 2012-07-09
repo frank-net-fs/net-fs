@@ -90,7 +90,7 @@ public class DualSimplex extends PrimalSimplex {
 					if(quotient > max) {
 						/*
 						 * 2012-07-09
-						 *  Greathfully thanks to Andy Jose <andyymm21@gmail.com>
+						 *  Greathfully thanks to Andy Jose
 						 *  for finding a bug. It have to be "max" instead of "min"
 						 *  
 						 *  min = quotient;
