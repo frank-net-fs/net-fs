@@ -358,7 +358,7 @@ public class TwoPhaseSimplexTest extends TestCase {
 				new Constraint(new double[] {1, 4}, TwoPhaseSimplex.GREATER_THAN, 12),
 				new Constraint(new double[] {3, 2}, TwoPhaseSimplex.GREATER_THAN, 15)
 		};
-		this.targetCoefficientValuesExpected = new double[] {5./2., 15./4., 0, 0, 11./2.};
+		this.targetCoefficientValuesExpected = new double[] {5./2., 15./4.};
 		
 		initTwoPhaseSimplex();
 		
